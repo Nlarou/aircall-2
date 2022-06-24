@@ -7,7 +7,7 @@ import { FaArchive, FaClipboardList } from "react-icons/fa";
 import { Link } from "react-router-dom";
 function ActivityFeed() {
   const { calls, loading, dispatch } = useContext(CallsContext);
-  const [modalIsOpen, setModalIsOpen] = useState(false);
+  const [modalIsOpen, setModalIsOpen] = useState(true);
   const [activeTab, setActiveTab] = useState("allCalls");
   const [selectedCall, setSelectedCall] = useState(null);
   useEffect(() => {
