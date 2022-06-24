@@ -40,38 +40,50 @@ function ActivityDetails() {
   }
   return (
     <div className=" w-full max-w-full h-full ">
-      <div class="card border grid grid-cols-2 my-5 mx-3 h-62 full-rounded text-left p-3">
-        <div className="grid gap-y-3 mt-5">
-          <div className="font-bold text-left h-auto">Call From: </div>
-          <div className="font-bold text-left h-auto">Call To: </div>
-          <div className="font-bold text-left h-auto">Call Date: </div>
-          <div className="font-bold text-left h-auto">Call Direction: </div>
-          <div className="font-bold text-left h-auto">Call Status: </div>
-          <div className="font-bold text-left h-auto">Call Length: </div>{" "}
-          <div className="font-bold text-left h-auto">Call Via: </div>
-          <div className="font-bold text-left h-auto">Call Archived: </div>
-        </div>
-        <div className="grid gap-y-3">
+      <div class="card border grid grid-cols-1 my-3 mx-3 h-62 gap-y-1 full-rounded text-center p-3">
+        <div className="my-1">
+          <div className="font-bold text-center h-auto mb-1">Call From </div>
           <div className="badge badge-accent w-full h-auto">{call.from}</div>
-
+        </div>
+        <div className="my-1">
+          <div className="font-bold text-center h-auto mb-1">Call To </div>
           <div className="badge badge-accent w-full h-auto">{call.to}</div>
-
+        </div>
+        <div className="my-1">
+          <div className="font-bold text-center h-auto mb-1">Call Date </div>
           <div className="badge badge-accent w-full h-auto">
             {formatDate(call.created_at)}
+          </div>
+        </div>
+        <div className="my-1">
+          <div className="font-bold text-center h-auto mb-1">
+            Call Direction{" "}
           </div>
           <div className="badge badge-accent w-full h-auto">
             {call.direction}
           </div>
+        </div>
+        <div className="my-1">
+          <div className="font-bold text-center h-auto mb-1">Call Status </div>
+
           <div className="badge badge-accent w-full h-auto">
             {call.call_type}
           </div>
-
+        </div>
+        <div className="my-1">
+          <div className="font-bold text-center h-auto mb-1">Call Length </div>
           <div className="badge badge-accent w-full h-auto">
             {secondsToTime(call.duration)}
           </div>
-
+        </div>
+        <div className="my-1">
+          <div className="font-bold text-center h-auto mb-1">Call Via </div>
           <div className="badge badge-accent w-full h-auto">{call.via}</div>
-
+        </div>
+        <div className="my-1">
+          <div className="font-bold text-center h-auto mb-1">
+            Call Archived{" "}
+          </div>
           <div className="badge badge-accent w-full h-auto">
             {call.is_archived ? "Archived" : "Not Archived"}
           </div>

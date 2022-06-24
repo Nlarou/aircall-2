@@ -2,7 +2,7 @@ import React from "react";
 import { HiPhoneIncoming, HiPhoneOutgoing } from "react-icons/hi";
 
 function CallCardItem({ call, onClick }) {
-  const { created_at, direction, from, to } = call;
+  const { created_at, direction, from, to, call_type } = call;
   const formatDate = (date) => {
     const dateObj = new Date(date).toLocaleTimeString("en-US", {
       hour: "numeric",
@@ -22,8 +22,13 @@ function CallCardItem({ call, onClick }) {
         ) : (
           <HiPhoneOutgoing className="w-5 h-5 fill-primary mr-5" />
         )}
-        <div class="card-text text-md font-bold w-36 max-w-36">
-          {direction === "inbound" ? from : to}
+        <div className="indication">
+          <div class="card-text text-md font-bold w-32 max-w-36">
+            {direction === "inbound" ? from : to}
+          </div>
+          <span class="indicator-item badge-accent badge-outline badge-xs">
+            {call_type}
+          </span>
         </div>
       </div>
 

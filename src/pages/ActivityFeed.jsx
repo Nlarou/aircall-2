@@ -45,7 +45,6 @@ function ActivityFeed() {
 
   const changeActiveTab = (tab) => {
     setActiveTab(tab.currentTarget.id);
-    console.log(calls.sort((a, b) => a.created_at - b.created_at));
   };
 
   const formatDate = (created_at) => {
